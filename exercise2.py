@@ -21,6 +21,14 @@ def find(input_string, substring, start, end):
     :raises:
 
     """
+    i = 0
+    x = (len(substring))
+    print x
+    for i in range(0, len(input_string)):
+        if input_string[i:(i+x)] == substring:
+            print i
+        else:
+            i += 1
     return -1
 
 
@@ -33,7 +41,19 @@ def multi_find(input_string, substring, start, end):
     :raises:
 
     """
+    j = 0
+    x = (len(substring))
+    print("next")
+    while j <= len(input_string):
+        for i in range(0, len(input_string)):
+            if input_string[i:(i+x)] == substring:
+                print i
+            else:
+                i += 1
+                j += len(input_string)
     result = ""
 
     return result
 
+find("This is an ex-parrot", "an", 0, 20)
+multi_find("Ni!sk Ni!sk Ni!sk Ni!sk", "sk", 0, 20)
