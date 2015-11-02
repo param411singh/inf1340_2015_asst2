@@ -23,7 +23,7 @@ def find(input_string, substring, start, end):
     """
     i = 0
     x = (len(substring))
-    print x
+
     for i in range(0, len(input_string)):
         if input_string[i:(i+x)] == substring:
             print i
@@ -43,7 +43,7 @@ def multi_find(input_string, substring, start, end):
     """
     j = 0
     x = (len(substring))
-    print("next")
+
     while j <= len(input_string):
         for i in range(0, len(input_string)):
             if input_string[i:(i+x)] == substring:

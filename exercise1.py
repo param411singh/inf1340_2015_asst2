@@ -6,7 +6,7 @@ This module converts English words to Pig Latin words
 
 """
 
-__author__ = 'Susan Sim'
+__author__ = 'Ryan Prance & Paramvir Singh'
 __email__ = "ses@drsusansim.org"
 __copyright__ = "2015 Susan Sim"
 __license__ = "MIT License"
@@ -17,21 +17,29 @@ def pig_latinify(word):
     Describe your function
 
 
-    :param :
-    :return:
+    :param : any word
+    :return: pig latin translation of that word
     :raises:
 
     """
+   #create step value
     a = 0
-    for index in word:
-        first_letter = word[a]
-        if first_letter in ('a', 'e', 'i', 'o', 'u'):
-            return word[a:] + "yay"
-        else:
-            a += 1
-            letter = word[a]
-            if letter in ('a', 'e', 'i', 'o', 'u'):
-                return word[a:] + word[:a] + "ay"
+
+    x = "yay"
+    y = "ay"
+    #define vowels as list
+    vowels = list("aeiouy")
+    first_letter = word[a]
+    for letter in word:
+        #if the word starts with a vowel, give the word plus suffix x
+        if first_letter in vowels:
+            return word + x
+        #if the previous condition is false
+        elif word[a] in vowels:
+            #move through letter positions until vowel is found
+            #when vowel found, slice from a to end of word, add a, and add y
+            return word[a:] + word[:a] + y
+
+        a += 1
 
 
-print pig_latinify(word="apple")
