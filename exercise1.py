@@ -14,32 +14,44 @@ __license__ = "MIT License"
 
 def pig_latinify(word):
     """
-    Describe your function
-
-
-    :param : any word
-    :return: pig latin translation of that word
+    Take in word and returns pig latin translation of word
+    :param :
+    word -> str
+    :return:
+    pig latin translation of that word
     :raises:
+    ERROR if word is not alphanumeric
+    ERROR if word is not a str
 
     """
-   #create step value
-    a = 0
+    #check to make sure that word is both string and contains letter characters
+    if type(word) is str and word.isalpha():
+        suffix1 = "yay"
+        suffix2 = "ay"
+        #define step variable to loop through letter positions
+        step = 0
+        #make the word all lower case
+        word = word.lower()
+        #define vowels as list
+        vowels = list("aeiouy")
+        #define first letter
 
-    x = "yay"
-    y = "ay"
-    #define vowels as list
-    vowels = list("aeiouy")
-    first_letter = word[a]
-    for letter in word:
-        #if the word starts with a vowel, give the word plus suffix x
-        if first_letter in vowels:
-            return word + x
-        #if the previous condition is false
-        elif word[a] in vowels:
-            #move through letter positions until vowel is found
-            #when vowel found, slice from a to end of word, add a, and add y
-            return word[a:] + word[:a] + y
+        #begin looping through the letters
+        for letter in word:
+            first_letter = word[0]
+            #if the first letter is a vowel, stop and return word plus yay
+            if first_letter in vowels:
+                return word + suffix1
+            #if the last condition is not satisfied
+            #go through the letters at step value
+            elif word[step] in vowels:
+                #if the letter in that position is in the list
+                #slice the word from step then add sliced word up to step plus the second suffix
+                return word[step:] + word[:step] + suffix2
+            #if the letter at position is not in vowels, add 1 to step and check again
+            step += 1
+    else:
+        return("ERROR")
 
-        a += 1
 
 

@@ -24,5 +24,17 @@ def test_basic():
     assert pig_latinify("is") == "isyay"
     assert pig_latinify("apple") == "appleyay"
     assert pig_latinify("python") == "ythonpay"
+    assert pig_latinify("APPLE") == "appleyay"
+
+def test_illegal():
+    """
+    checks that program returns ERROR if ille
+
+    """
+    assert pig_latinify(123) == "ERROR"
+    assert pig_latinify("123") == "ERROR"
+    assert pig_latinify("!!!!!!!!!!!!!!!") == "ERROR"
+
+
 
 
