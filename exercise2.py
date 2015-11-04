@@ -57,5 +57,5 @@ def multi_find(input_string, substring, start, end):
             loop = False
     return nulist
 
-print(find("catdog", "dog", 0, 6))
-print(multi_find("Ni! Ni! Ni! Ni!", "Ni", 0, 20))
+print multi_find("Ni! Ni! Ni! Ni!", "dog", 0, 20)
+

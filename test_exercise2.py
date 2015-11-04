@@ -28,3 +28,7 @@ def test_multi_find_basic():
     assert multi_find("Ni! Ni! Ni! Ni!", "Ni", 0, 20) == "0,4,8,12"
 
 def test_find_nothing():
+    assert find("Ni! Ni! Ni! Ni!", "Hi", 0, 20) == -1
+
+def test_multi_find_nothing():
+    assert multi_find("Ni! Ni! Ni! Ni!", "Hi", 0, 20) == ""
