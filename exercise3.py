@@ -16,6 +16,7 @@ __license__ = "MIT License"
 def union(table1, table2):
     """
     Perform the union set operation on tables, table1 and table2.
+    (returns a new table that contains all unique rows that appear in either table.)
 
     :param table1: a table (a List of Lists)
     :param table2: a table (a List of Lists)
@@ -23,22 +24,34 @@ def union(table1, table2):
     :raises: MismatchedAttributesException:
         if tables t1 and t2 don't have the same attributes
     """
-    return []
+    new_list = []
+    for item in table1:
+        new_list.append(item)
+    for item in table2:
+        if not item in new_list:
+            new_list.append(item)
+    return #newlist
 
 
 def intersection(table1, table2):
     """
     Describe your function
 
+
     """
-    return []
+    new_list = []
+    for list in table1:
+        if list in table2:
+            new_list.append(list)
+    return new_list
 
 
 def difference(table1, table2):
     """
     Describe your function
-
+    returns a new table that contains all unique rows that appear in both tables
     """
+
     return []
 
 

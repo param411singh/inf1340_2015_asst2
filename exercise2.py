@@ -6,7 +6,7 @@ This module converts performs substring matching for DNA sequencing
 
 """
 
-__author__ = 'Susan Sim'
+__author__ = 'Ryan Prance & Paramvir Singh'
 __email__ = "ses@drsusansim.org"
 __copyright__ = "2015 Susan Sim"
 __license__ = "MIT License"
@@ -21,12 +21,12 @@ def find(input_string, substring, start, end):
     :raises:
 
     """
-    i = 0
-    x = (len(substring))
 
-    for i in range(0, len(input_string)):
-        if input_string[i:(i+x)] == substring:
-            print i
+    sublen = (len(substring))
+
+    for i in range(start, end):
+        if input_string[i:(i+sublen)] == substring:
+            return i
         else:
             i += 1
     return -1
@@ -41,19 +41,21 @@ def multi_find(input_string, substring, start, end):
     :raises:
 
     """
-    j = 0
-    x = (len(substring))
-
-    while j <= len(input_string):
-        for i in range(0, len(input_string)):
-            if input_string[i:(i+x)] == substring:
-                print i
+    loop = True
+    #define an empty string
+    nulist = ""
+    #send start value back one so end value is what it would be if starting from 0
+    r = start - 1
+    while loop:
+        r = find(input_string, substring, r + 1, end)
+        if r != -1:
+            if nulist == "":
+                nulist += str(r)
             else:
-                i += 1
-                j += len(input_string)
-    result = ""
+                nulist += "," + str(r)
+        else:
+            loop = False
+    return nulist
 
-    return result
-
-find("This is an ex-parrot", "an", 0, 20)
-multi_find("Ni!sk Ni!sk Ni!sk Ni!sk", "sk", 0, 20)
+print(find("catdog", "dog", 0, 6))
+print(multi_find("Ni! Ni! Ni! Ni!", "Ni", 0, 20))
