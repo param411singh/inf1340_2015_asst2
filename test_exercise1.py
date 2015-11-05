@@ -6,7 +6,7 @@ Test module for exercise1.py
 
 """
 
-__author__ = 'Susan Sim'
+__author__ = 'Ryan Prance & Paramvir Singh'
 __email__ = "ses@drsusansim.org"
 __copyright__ = "2015 Susan Sim"
 __license__ = "MIT License"
