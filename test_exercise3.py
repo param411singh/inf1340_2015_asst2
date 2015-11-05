@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+from exercise3 import union, intersection, difference,MismatchedAttributesException
 
 """ Assignment 2, Exercise 3, INF1340, Fall, 2015. DBMS
 
@@ -6,12 +7,10 @@ Test module for exercise3.py
 
 """
 
-__author__ = 'Susan Sim'
+__author__ = 'Ryan Prance & Paramvir Singh'
 __email__ = "ses@drsusansim.org"
 __copyright__ = "2015 Susan Sim"
 __license__ = "MIT License"
-
-from exercise3 import union, intersection, difference, MismatchedAttributesException
 
 
 ###########
@@ -100,12 +99,11 @@ def test_intersection():
 
     assert is_equal(result, intersection(GRADUATES, MANAGERS))
     assert is_equal(result_2, intersection(STUDENTS, COURSES))
-
+    # Test Case when the Schemas don't match
     try:
         assert intersection(GRADUATES, STUDENTS)
     except MismatchedAttributesException:
         pass
-
 
 
 def test_difference():
@@ -122,8 +120,9 @@ def test_difference():
 
     assert is_equal(result, difference(GRADUATES, MANAGERS))
     assert is_equal(result_2, difference(STUDENTS, COURSES))
-
+    # Test Case when the Schemas don't match
     try:
         assert difference(GRADUATES, STUDENTS)
     except MismatchedAttributesException:
         pass
+

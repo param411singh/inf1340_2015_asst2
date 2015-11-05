@@ -14,11 +14,13 @@ __license__ = "MIT License"
 
 def find(input_string, substring, start, end):
     """
+    The function provides the start index of the substring
+    in a larger input string
 
-    The function provides the start index of the substring in a larger input string
-
-    :param : a string passed as an argument from the test cases or from the other function
-    :return: the start index of the substring if the substring is found, else returns "No Match Found"
+    :param : a string passed as an argument from the test cases or from the
+    other function
+    :return: the start index of the substring if the substring is found,
+    else returns "No Match Found"
 
     """
 
@@ -37,10 +39,12 @@ def find(input_string, substring, start, end):
 def multi_find(input_string, substring, start, end):
     """
 
-    The function provides multiple indices related to the instances of substring in the larger string
+    The function provides multiple indices related to the instances of
+    substring in the larger string
 
     :param : a string passed as an argument from the test cases
-    :return: the start indices of the substring if the substring is found, else returns "No Match Found"
+    :return: the start indices of the substring if the substring is found
+    else returns "No Match Found"
 
     """
     # convert arguments into string if not passed as strings
@@ -50,7 +54,8 @@ def multi_find(input_string, substring, start, end):
     # define an empty string
     list_for_storing_index = ""
 
-    # send start value back one so end value is what it would be if starting from 0
+    # send start value back one so end value is what it would be if
+    # starting from 0
     result = start - 1
 
     loop = True
@@ -87,9 +92,11 @@ def multi_find(input_string, substring, start, end):
             else:
                 index += 1
                 counter += len(input_string)
-    # Take out individual index values from the list_for storing_index and return them as a string
+    # Take out individual index values from the list_for storing_index
+    and return them as a string
     if list_for_storing_index is None:
         return "No Match Found"
     else:
         return ",".join([str(z) for z in list_for_storing_index])
 """
+

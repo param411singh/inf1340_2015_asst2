@@ -16,7 +16,8 @@ __license__ = "MIT License"
 def union(table1, table2):
     """
     Perform the union set operation on tables, table1 and table2.
-    (returns a new table that contains all unique rows that appear in either table.)
+    (returns a new table that contains all unique rows that appear
+    in either table.)
 
     :param table1: a table (a List of Lists)
     :param table2: a table (a List of Lists)
@@ -48,12 +49,12 @@ def union(table1, table2):
     return table3
 
 
-
-
 def intersection(table1, table2):
     """
-    Performs the intersection set of operations on the tables: table1 and table2
-    If the two tables have similar schema and some common rows, it returns the schema as well as the common rows
+    Performs the intersection set of operations on the tables:
+    table1 and table2
+    If the two tables have similar schema and some common rows,
+    it returns the schema as well as the common rows
     Otherwise it raises the MismatchedAttributesException
     :param table1: a table (a List of Lists)
     :param table2: a table (a List of Lists)
@@ -75,11 +76,11 @@ def intersection(table1, table2):
     return table3
 
 
-
 def difference(table1, table2):
     """
     Performs the difference set of operations on the tables: table1 and table2
-    If the two tables have similar schema and some uncommon rows, it returns the schema as well as the uncommon rows
+    If the two tables have similar schema and some uncommon rows,
+    it returns the schema as well as the uncommon rows
     Otherwise it raises the MismatchedAttributesException
     :param table1: a table (a List of Lists)
     :param table2: a table (a List of Lists)

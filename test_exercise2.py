@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-
+from exercise2 import find, multi_find
 """ Assignment 2, Exercise 2, INF1340, Fall, 2015. DNA Sequencing
 
 Test module for exercise2.py
@@ -10,8 +10,6 @@ __author__ = 'Susan Sim'
 __email__ = "ses@drsusansim.org"
 __copyright__ = "2015 Susan Sim"
 __license__ = "MIT License"
-
-from exercise2 import find, multi_find
 
 
 def test_find_basic():
@@ -46,3 +44,4 @@ def test_multi_find_nothing():
 
     # Test using special characters
     multi_find("!@#$ $#@! ^%$! !@*(", "!", 0, 18) == "0,8,13,15"
+

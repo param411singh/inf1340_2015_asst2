@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-
+from exercise1 import pig_latinify
 """ Assignment 2, Exercise 1, INF1340, Fall, 2015. Pig Latin
 
 Test module for exercise1.py
@@ -10,9 +10,6 @@ __author__ = 'Susan Sim'
 __email__ = "ses@drsusansim.org"
 __copyright__ = "2015 Susan Sim"
 __license__ = "MIT License"
-
-
-from exercise1 import pig_latinify
 
 
 def test_basic():
@@ -47,11 +44,7 @@ def test_illegal():
 
     # when alphanumeric string is passed in as a parameter
     assert pig_latinify("as123f") == "ERROR"
+    assert pig_latinify("y3llow") == "ERROR"
 
     # when an empty string is passed in as a parameter
     assert pig_latinify("") == "ERROR"
-
-    assert pig_latinify("y3llow") == "ERROR"
-
-
-

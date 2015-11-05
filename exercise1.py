@@ -21,7 +21,8 @@ def pig_latinify(word):
 
     """
 
-    # check to make sure that word is both string and contains letter characters
+    # check to make sure that word is both string and contains letter
+    # characters
     if type(word) is str and word.isalpha():
         # define step variable to loop through letter positions
         step = 0
@@ -39,12 +40,12 @@ def pig_latinify(word):
             # go through the letters at step value
             elif word[step] in vowels:
                 # if the letter in that position is in the list
-                # slice the word from step then add sliced word up to step plus the second suffix
+                # slice the word from step then add sliced word up to step plus
+                # the second suffix
                 return word[step:] + word[:step] + "ay"
-            # if the letter at position is not in vowels, add 1 to step and check again
+            # if the letter at position is not in vowels, add 1 to step
+            # and check again
             step += 1
     else:
         return "ERROR"
-
-print(pig_latinify("yellow"))
 
