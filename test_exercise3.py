@@ -70,10 +70,16 @@ def test_union():
 
     result_2 = [["Name", "Student No", "Program", "Course"],
                 ["Ryan", 1002178216, "ISD", 1341],
-                ]
+                ["Param", 1002178213, "KMD", 1340],
+                ["Michael", 100218765, "LIS", 1234],
+                ["Mibin", 1002176123, "KMIM", 2176],
+                ["Steph", 1002154321, "LIS", 8712],
+                ["John", 1002123442, "CRO", 1276]]
 
     assert is_equal(result, union(GRADUATES, MANAGERS))
+    assert is_equal(result_2, union(STUDENTS, COURSES))
 
+    # Test Case when the Schemas don't match
     try:
         assert union(GRADUATES, STUDENTS)
     except MismatchedAttributesException:
@@ -99,4 +105,9 @@ def test_difference():
     result = [["Number", "Surname", "Age"],
               [7274, "Robinson", 37]]
 
+    result_2 = [["Name", "Student No", "Program", "Course"],
+                ["Mibin", 1002176123, "KMIM", 2176],
+                ["Steph", 1002154321, "LIS", 8712]]
+
     assert is_equal(result, difference(GRADUATES, MANAGERS))
+    assert is_equal(result_2, difference(STUDENTS, COURSES))
