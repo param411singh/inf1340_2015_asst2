@@ -24,6 +24,27 @@ def union(table1, table2):
     :raises: MismatchedAttributesException:
         if tables t1 and t2 don't have the same attributes
     """
+    if table1[0] == table2[0]:
+        table3 = [table1[0]]
+        if (len(table1) > len(table2)) or (len(table1) == len(table2)):
+            for i in range(1, len(table1)):
+                if table1[i] not in table3:
+                    table3 += [table1[i]]
+                    for j in range(1, len(table2)):
+                        if table2[i] not in table3:
+                            table3 += [table2[i]]
+        else:
+            for i in range(1, len(table2)):
+                if table2[i] not in table3:
+                    table3 += [table2[i]]
+                    for j in range(1, len(table1)):
+                        if table1[j] not in table3:
+                            table3 += [table1[j]]
+    else:
+        raise MismatchedAttributesException
+    return table3
+
+"""
     new_list = []
     for item in table1:
         new_list.append(item)
@@ -31,6 +52,7 @@ def union(table1, table2):
         if not item in new_list:
             new_list.append(item)
     return #newlist
+"""
 
 
 def intersection(table1, table2):
@@ -39,21 +61,38 @@ def intersection(table1, table2):
 
 
     """
+
+    if table1[0] == table2[0]:
+        table3 = [table1[0]]
+        for i in range(1, len(table1)):
+            for j in range(1, len(table2)):
+                if table1[i] == table2[j]:
+                    table3 += [table1[i]]
+    else:
+        raise MismatchedAttributesException
+    return table3
+
+"""
     new_list = []
     for list in table1:
         if list in table2:
             new_list.append(list)
     return new_list
-
+"""
 
 def difference(table1, table2):
     """
     Describe your function
     returns a new table that contains all unique rows that appear in both tables
     """
-
-    return []
-
+    if table1[0] == table2[0]:
+        table3 = [table1[0]]
+        for i in range(1, len(table1)):
+                if table1[i] not in table2:
+                    table3 += [table1[i]]
+    else:
+        raise MismatchedAttributesException
+    return table3
 
 #####################
 # HELPER FUNCTIONS ##
@@ -81,3 +120,14 @@ class MismatchedAttributesException(Exception):
     """
     pass
 
+GRADUATES = [["Number", "Surname", "Age"],
+             [7274, "Robinson", 37],
+             [7432, "O'Malley", 39],
+             [9824, "Darkes", 38]]
+
+MANAGERS = [["Number", "Surname", "Age"],
+            [9297, "O'Malley", 56],
+            [7432, "O'Malley", 39],
+            [9824, "Darkes", 38]]
+
+#print union(GRADUATES,MANAGERS)
