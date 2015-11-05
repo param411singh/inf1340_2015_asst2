@@ -24,9 +24,12 @@ def union(table1, table2):
     :raises: MismatchedAttributesException:
         if tables t1 and t2 don't have the same attributes
     """
+
+    # Initiate by testing whether the schemas of the two tables match or not
     if table1[0] == table2[0]:
+        # If the schemas match, assign the schema to a new table
         table3 = [table1[0]]
-        if (len(table1) > len(table2)) or (len(table1) == len(table2)):
+        if len(table1) >= len(table2):
             for i in range(1, len(table1)):
                 if table1[i] not in table3:
                     table3 += [table1[i]]
@@ -57,12 +60,19 @@ def union(table1, table2):
 
 def intersection(table1, table2):
     """
-    Describe your function
-
-
+    Performs the intersection set of operations on the tables: table1 and table2
+    If the two tables have similar schema and some common rows, it returns the schema as well as the common rows
+    Otherwise it raises the MismatchedAttributesException
+    :param table1: a table (a List of Lists)
+    :param table2: a table (a List of Lists)
+    :return: the resulting table
+    :raises: MismatchedAttributesException:
+        if tables t1 and t2 don't have the same attributes
     """
 
+    # Check whether the schemas of the two tables match
     if table1[0] == table2[0]:
+        # If the schemas match, assign the schema to a new table
         table3 = [table1[0]]
         for i in range(1, len(table1)):
             for j in range(1, len(table2)):
@@ -80,12 +90,22 @@ def intersection(table1, table2):
     return new_list
 """
 
+
 def difference(table1, table2):
     """
-    Describe your function
-    returns a new table that contains all unique rows that appear in both tables
+    Performs the difference set of operations on the tables: table1 and table2
+    If the two tables have similar schema and some uncommon rows, it returns the schema as well as the uncommon rows
+    Otherwise it raises the MismatchedAttributesException
+    :param table1: a table (a List of Lists)
+    :param table2: a table (a List of Lists)
+    :return: the resulting table
+    :raises: MismatchedAttributesException:
+        if tables t1 and t2 don't have the same attributes
     """
+
+    # Check whether the schemas of the two tables match
     if table1[0] == table2[0]:
+        # If the schemas match, assign the schema to a new table
         table3 = [table1[0]]
         for i in range(1, len(table1)):
                 if table1[i] not in table2:
@@ -93,6 +113,7 @@ def difference(table1, table2):
     else:
         raise MismatchedAttributesException
     return table3
+
 
 #####################
 # HELPER FUNCTIONS ##
@@ -120,14 +141,3 @@ class MismatchedAttributesException(Exception):
     """
     pass
 
-GRADUATES = [["Number", "Surname", "Age"],
-             [7274, "Robinson", 37],
-             [7432, "O'Malley", 39],
-             [9824, "Darkes", 38]]
-
-MANAGERS = [["Number", "Surname", "Age"],
-            [9297, "O'Malley", 56],
-            [7432, "O'Malley", 39],
-            [9824, "Darkes", 38]]
-
-#print union(GRADUATES,MANAGERS)
