@@ -83,7 +83,7 @@ def test_union():
     try:
         assert union(GRADUATES, STUDENTS)
     except MismatchedAttributesException:
-        True
+        pass
 
 
 def test_intersection():
