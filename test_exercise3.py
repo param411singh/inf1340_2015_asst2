@@ -11,7 +11,7 @@ __email__ = "ses@drsusansim.org"
 __copyright__ = "2015 Susan Sim"
 __license__ = "MIT License"
 
-from exercise3 import union, intersection, difference
+from exercise3 import union, intersection, difference,
 
 
 ###########
@@ -74,3 +74,8 @@ def test_difference():
               [7274, "Robinson", 37]]
 
     assert is_equal(result, difference(GRADUATES, MANAGERS))
+
+def test_illegal_input():
+    """
+    test to make sure error is raised
+    """

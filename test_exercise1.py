@@ -51,5 +51,7 @@ def test_illegal():
     # when an empty string is passed in as a parameter
     assert pig_latinify("") == "ERROR"
 
+    assert pig_latinify("y3llow") == "ERROR"
+
 
 

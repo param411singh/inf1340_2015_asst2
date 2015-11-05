@@ -46,5 +46,5 @@ def pig_latinify(word):
     else:
         return "ERROR"
 
-
+print(pig_latinify("yellow"))
 
