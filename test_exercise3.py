@@ -101,6 +101,12 @@ def test_intersection():
     assert is_equal(result, intersection(GRADUATES, MANAGERS))
     assert is_equal(result_2, intersection(STUDENTS, COURSES))
 
+    try:
+        assert intersection(GRADUATES, STUDENTS)
+    except MismatchedAttributesException:
+        pass
+
+
 
 def test_difference():
     """
@@ -116,3 +122,8 @@ def test_difference():
 
     assert is_equal(result, difference(GRADUATES, MANAGERS))
     assert is_equal(result_2, difference(STUDENTS, COURSES))
+
+    try:
+        assert difference(GRADUATES, STUDENTS)
+    except MismatchedAttributesException:
+        pass
