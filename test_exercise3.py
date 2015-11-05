@@ -27,6 +27,8 @@ MANAGERS = [["Number", "Surname", "Age"],
             [7432, "O'Malley", 39],
             [9824, "Darkes", 38]]
 
+STUDENTS = []
+
 
 #####################
 # HELPER FUNCTIONS ##

@@ -26,15 +26,30 @@ def test_basic():
     assert pig_latinify("python") == "ythonpay"
     assert pig_latinify("APPLE") == "appleyay"
 
+    # when a word containing multiple vowels is passed in as a parameter
+    assert pig_latinify("paramvir") == "aramvirpay"
+
+
 def test_illegal():
     """
-    checks that program returns ERROR if ille
+    checks that program returns ERROR if illegal input is encountered
 
     """
-    assert pig_latinify(123) == "ERROR"
-    assert pig_latinify("123") == "ERROR"
-    assert pig_latinify("!!!!!!!!!!!!!!!") == "ERROR"
 
+    # when an integer is passed in as a parameter
+    assert pig_latinify(123) == "ERROR"
+
+    # when a string containing numbers is passed in as a parameter
+    assert pig_latinify("123") == "ERROR"
+
+    # when special characters are provided
+    assert pig_latinify("!@#$%") == "ERROR"
+
+    # when alphanumeric string is passed in as a parameter
+    assert pig_latinify("as123f") == "ERROR"
+
+    # when an empty string is passed in as a parameter
+    assert pig_latinify("") == "ERROR"
 
 
 
