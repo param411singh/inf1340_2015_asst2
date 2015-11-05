@@ -74,10 +74,7 @@ def test_union():
 
     assert is_equal(result, union(GRADUATES, MANAGERS))
 
-    try:
-        assert union(GRADUATES, STUDENTS)
-    except MismatchedAttributesException:
-        True
+
 
 
 def test_intersection():
@@ -87,9 +84,12 @@ def test_intersection():
     result = [["Number", "Surname", "Age"],
               [7432, "O'Malley", 39],
               [9824, "Darkes", 38]]
+    result_2 = [['Name', 'Student No', 'Program', 'Course'],
+                ['Ryan', 1002178216, 'ISD', 1341],
+                ['Param', 1002178213, 'KMD', 1340]]
 
     assert is_equal(result, intersection(GRADUATES, MANAGERS))
-
+    assert is_equal(result_2, intersection(STUDENTS, COURSES))
 
 def test_difference():
     """
@@ -100,3 +100,4 @@ def test_difference():
               [7274, "Robinson", 37]]
 
     assert is_equal(result, difference(GRADUATES, MANAGERS))
+
