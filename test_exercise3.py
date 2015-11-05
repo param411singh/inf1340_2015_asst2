@@ -33,6 +33,12 @@ STUDENTS = [["Name", "Student No", "Program", "Course"],
             ["Mibin", 1002176123, "KMIM", 2176],
             ["Steph", 1002154321, "LIS", 8712]]
 
+COURSES = [["Name", "Student No", "Program", "Course"],
+           ["Ryan", 1002178216, "ISD", 1341],
+           ["Michael", 100218765, "LIS", 1234],
+           ["Param", 1002178213, "KMD", 1340],
+           ["John", 1002123442, "CRO", 1276]]
+
 FACULTY = [["Name", "Employee ID", "Program", "Course"],
            ["Eric", 8716234, "ISD", 1341],
            ["Susan", 8716243, "KMD", 1340],
@@ -62,12 +68,17 @@ def test_union():
               [7432, "O'Malley", 39],
               [9824, "Darkes", 38]]
 
+    result_2 = [["Name", "Student No", "Program", "Course"],
+                ["Ryan", 1002178216, "ISD", 1341],
+                ]
+
     assert is_equal(result, union(GRADUATES, MANAGERS))
 
     try:
         assert union(GRADUATES, STUDENTS)
     except MismatchedAttributesException:
         True
+
 
 def test_intersection():
     """
