@@ -47,15 +47,7 @@ def union(table1, table2):
         raise MismatchedAttributesException
     return table3
 
-"""
-    new_list = []
-    for item in table1:
-        new_list.append(item)
-    for item in table2:
-        if not item in new_list:
-            new_list.append(item)
-    return #newlist
-"""
+
 
 
 def intersection(table1, table2):
@@ -82,13 +74,6 @@ def intersection(table1, table2):
         raise MismatchedAttributesException
     return table3
 
-"""
-    new_list = []
-    for list in table1:
-        if list in table2:
-            new_list.append(list)
-    return new_list
-"""
 
 
 def difference(table1, table2):
