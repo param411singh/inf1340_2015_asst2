@@ -70,27 +70,6 @@ def multi_find(input_string, substring, start, end):
     else:
         return list_for_storing_index
 
-
-"""
-    loop = True
-    index = start - 1
-    new_list = ""
-    while loop is True:
-        result = find(input_string, substring, index + 1, end)
-        if result != "No Match Found":
-            if new_list is None:
-                new_list += str(result)
-            else:
-                new_list += "," + str(result)
-        else:
-            loop = False
-    print("hello")
-    if new_list is None:
-        return "No Match Found"
-    else:
-        return new_list
-"""
-
 """
     Exercise done without using the find function
 
@@ -114,10 +93,3 @@ def multi_find(input_string, substring, start, end):
     else:
         return ",".join([str(z) for z in list_for_storing_index])
 """
-
-
-
-
-#a = multi_find("Ni! Ni! Ni! Ni!", "hi", 0, 20)
-a = multi_find(4112341156411, 411, 0, 13)
-print(a)
